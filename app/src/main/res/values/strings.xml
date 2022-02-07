@@ -630,6 +630,7 @@
     <string name="key_enableSMB_with_temptarget" translatable="false">enableSMB_with_temptarget</string>
     <string name="key_enableSMB_after_carbs" translatable="false">enableSMB_after_carbs</string>
     <string name="key_allowSMB_with_high_temptarget" translatable="false">enableSMB_with_high_temptarget</string>
+    <string name="key_enableSMB_ignore_adv_filter_support" translatable="false">enableSMB_ignore_adv_filter_support</string>
     <string name="enablesmbalways">Enable SMB always</string>
     <string name="enablesmbalways_summary">Enable SMB always independently to boluses. Possible only with BG source with nice filtering of data like G5</string>
     <string name="enablesmbaftercarbs">Enable SMB after carbs</string>
@@ -640,6 +641,8 @@
     <string name="enablesmbwithtemptarget_summary">Enable SMB when there is temp target active (eating soon, exercise)</string>
     <string name="enablesmbwithhightemptarget">Enable SMB with high temp targets</string>
     <string name="enablesmbwithhightemptarget_summary">Enable SMB when there is high temp target active (exercise, above 100 mg/dl or 5.5 mmol/l)</string>
+    <string name="enablesmbignoreadvfiltersupport">Ignore CGM advanced filtering support</string>
+    <string name="enablesmbignoreadvfiltersupport_summary">SMB will be enabled no matter if CGM supports advanced filtering or not</string>
     <string name="overview_insulin_label">Insulin</string>
     <string name="overview_buttons_selection">Buttons</string>
     <string name="key_show_calibration_button" translatable="false">show_calibration_button</string>

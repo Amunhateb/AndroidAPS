@@ -34,6 +34,12 @@
             validate:floatminNumber="1"
             validate:testType="numericRange" />
 
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_enableSMB_ignore_adv_filter_support"
+            android:summary="@string/enable_smb_ignore_adv_filter_support_summary"
+            android:title="@string/enable_smb_ignore_adv_filter_support" />
+
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

@@ -62,5 +62,7 @@
     <string name="objectives_button_unfinish">Reset finished state</string>
     <string name="objectives_button_unstart">Reset started state</string>
 
+    <string name="enable_smb_ignore_adv_filter_support">Ignore CGM advanced filtering support</string>
+    <string name="enable_smb_ignore_adv_filter_support_summary">SMB will be enabled no matter if CGM supports advanced filtering or not</string>
 
 </resources>

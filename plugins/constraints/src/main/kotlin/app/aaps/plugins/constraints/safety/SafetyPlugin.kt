@@ -26,6 +26,7 @@ import app.aaps.core.interfaces.utils.DateUtil
 import app.aaps.core.interfaces.utils.DecimalFormatter
 import app.aaps.core.interfaces.utils.HardLimits
 import app.aaps.core.interfaces.utils.Round
+import app.aaps.core.keys.BooleanKey
 import app.aaps.core.keys.DoubleKey
 import app.aaps.core.keys.IntKey
 import app.aaps.core.keys.StringKey
@@ -36,6 +37,7 @@ import app.aaps.core.objects.extensions.store
 import app.aaps.core.validators.preferences.AdaptiveDoublePreference
 import app.aaps.core.validators.preferences.AdaptiveIntPreference
 import app.aaps.core.validators.preferences.AdaptiveListPreference
+import app.aaps.core.validators.preferences.AdaptiveSwitchPreference
 import app.aaps.plugins.constraints.R
 import org.json.JSONObject
 import javax.inject.Inject
@@ -95,7 +97,9 @@ class SafetyPlugin @Inject constructor(
 
     override fun isAdvancedFilteringEnabled(value: Constraint<Boolean>): Constraint<Boolean> {
         val bgSource = activePlugin.activeBgSource
-        if (!bgSource.advancedFilteringSupported()) value.set(false, rh.gs(R.string.smbalwaysdisabled), this)
+        val ignoreAdvFilterSupport = preferences.get(BooleanKey.IgnoreAdvFilterSupport)
+        // val ignoreAdvFilterSupport = sp.getBoolean(R.string.key_enableSMB_ignore_adv_filter_support, false)
+        if (!ignoreAdvFilterSupport && !bgSource.advancedFilteringSupported()) value.set(false, rh.gs(R.string.smbalwaysdisabled), this)
         return value
     }
 
@@ -201,6 +205,7 @@ class SafetyPlugin @Inject constructor(
             )
             addPreference(AdaptiveDoublePreference(ctx = context, doubleKey = DoubleKey.SafetyMaxBolus, title = app.aaps.core.ui.R.string.max_bolus_title))
             addPreference(AdaptiveIntPreference(ctx = context, intKey = IntKey.SafetyMaxCarbs, title = app.aaps.core.ui.R.string.max_carbs_title))
+            addPreference(AdaptiveSwitchPreference(ctx = context, booleanKey = BooleanKey.IgnoreAdvFilterSupport, title = R.string.enable_smb_ignore_adv_filter_support, summary = R.string.enable_smb_ignore_adv_filter_support_summary))
         }
     }
 }

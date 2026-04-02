@@ -129,4 +129,5 @@ enum class BooleanKey(
     ExportCsvLocalEnabled("export_csv_local_enabled", defaultValue = true),
     ExportCsvCloudEnabled("export_csv_cloud_enabled", defaultValue = false),
 
+    IgnoreAdvFilterSupport("enableSMB_ignore_adv_filter_support", defaultValue = false),
 }
